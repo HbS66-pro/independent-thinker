@@ -30,25 +30,19 @@ Three rules it doesn't break:
 
 Pick one language build. Both declare the same skill name, so install one, not both.
 
-English:
+Grab `independent-thinker-en.zip` or `independent-thinker-zh.zip` from [Releases](https://github.com/HbS66-pro/independent-thinker/releases/latest) and unzip it into your agent's skills folder. The archive already contains the `independent-thinker/` folder, so it lands under the right name.
+
+From source instead:
 
 ```bash
 git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git independent-thinker-src
 rm -rf ~/.dsh/skills/independent-thinker
-cp -r independent-thinker-src/en ~/.dsh/skills/independent-thinker
+cp -r independent-thinker-src/en ~/.dsh/skills/independent-thinker   # or zh
 ```
 
-中文:
+The folder name has to match the skill name, which is why there is a copy step. The remove step exists because copying onto a folder that already exists nests the new copy inside the old one, and the old files keep loading.
 
-```bash
-git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git independent-thinker-src
-rm -rf ~/.dsh/skills/independent-thinker
-cp -r independent-thinker-src/zh ~/.dsh/skills/independent-thinker
-```
-
-Three things in there are load-bearing. The folder name has to match the skill name, so this is not a plain clone into the skills folder. The remove step exists because copying onto a folder that already exists nests the new copy inside the old one, and the old files keep loading. The source clone is disposable; delete `independent-thinker-src` when you are done.
-
-The paths assume `~/.dsh/skills/`; any other agent has its own skills folder, so swap the path. On Windows that is `%USERPROFILE%\.dsh\skills\`, and the last two commands become `Remove-Item -Recurse -Force` and `Copy-Item -Recurse`.
+Paths assume `~/.dsh/skills/`; any other agent has its own skills folder, so swap the path. On Windows that is `%USERPROFILE%\.dsh\skills\`, with `Remove-Item -Recurse -Force` and `Copy-Item -Recurse`.
 
 ## Usage
 
@@ -91,6 +85,8 @@ Align sits inline in `SKILL.md` because it's the default path and runs every tim
 ## What this is not
 
 Not a smarter model, and not a benchmark. It doesn't make the reasoning deeper; it makes the output checkable. If no tags and no verdict show up in the reply, it did nothing.
+
+What is still missing: [ROADMAP.md](ROADMAP.md).
 
 ## Credits
 

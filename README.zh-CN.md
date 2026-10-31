@@ -30,23 +30,17 @@
 
 两种语言各一份，技能名相同，装一个就行。
 
-中文：
+最省事：从 [Releases](https://github.com/HbS66-pro/independent-thinker/releases/latest) 下 `independent-thinker-zh.zip`（英文版是 `-en.zip`），解压到你的技能目录。包里已经带好 `independent-thinker/` 这一层，解压出来名字就是对的。
+
+从源码装：
 
 ```bash
 git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git independent-thinker-src
 rm -rf ~/.dsh/skills/independent-thinker
-cp -r independent-thinker-src/zh ~/.dsh/skills/independent-thinker
+cp -r independent-thinker-src/zh ~/.dsh/skills/independent-thinker   # 英文版换成 en
 ```
 
-English:
-
-```bash
-git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git independent-thinker-src
-rm -rf ~/.dsh/skills/independent-thinker
-cp -r independent-thinker-src/en ~/.dsh/skills/independent-thinker
-```
-
-三条命令都不能省。目录名要和技能名一致，所以不能直接 clone 进技能目录。先删是因为往已经存在的目录上拷，新的会被套进旧目录里，加载的还是旧文件。源码那份用完可以删掉。
+目录名要和技能名一致，所以多一步拷贝；先删是因为往已经存在的目录上拷，新的会被套进旧目录里，加载的还是旧文件。
 
 路径按 `~/.dsh/skills/` 写；换别的 agent 就换成它自己的技能目录。Windows 上是 `%USERPROFILE%\.dsh\skills\`，后两条换成 `Remove-Item -Recurse -Force` 和 `Copy-Item -Recurse`。
 
@@ -91,6 +85,8 @@ zh/    中文版，结构相同
 ## 它不是什么
 
 不是更聪明的模型，也没有 benchmark。它不负责让思考变深，只负责让输出能核对。回复里没有标签、没有结论，就等于没用上。
+
+还缺什么：[ROADMAP.md](ROADMAP.md)。
 
 ## 参考与致谢
 
