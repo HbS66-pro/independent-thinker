@@ -46,7 +46,7 @@ cp -r independent-thinker-src/en ~/.dsh/skills/independent-thinker
 
 三条命令都不能省。目录名要和技能名一致，所以不能直接 clone 进技能目录。先删是因为往已经存在的目录上拷，新的会被套进旧目录里，加载的还是旧文件。源码那份用完可以删掉。
 
-路径按 `~/.dsh/skills/` 写，那是 DeepSeek Harness 放技能的地方；换别的 agent 就换成它自己的目录。Windows 上是 `%USERPROFILE%\.dsh\skills\`，后两条换成 `Remove-Item -Recurse -Force` 和 `Copy-Item -Recurse`。
+路径按 `~/.dsh/skills/` 写；换别的 agent 就换成它自己的技能目录。Windows 上是 `%USERPROFILE%\.dsh\skills\`，后两条换成 `Remove-Item -Recurse -Force` 和 `Copy-Item -Recurse`。
 
 ## 用法
 

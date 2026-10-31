@@ -46,7 +46,7 @@ cp -r independent-thinker-src/zh ~/.dsh/skills/independent-thinker
 
 Three things in there are load-bearing. The folder name has to match the skill name, so this is not a plain clone into the skills folder. The remove step exists because copying onto a folder that already exists nests the new copy inside the old one, and the old files keep loading. The source clone is disposable; delete `independent-thinker-src` when you are done.
 
-The paths assume `~/.dsh/skills/`, which is where DeepSeek Harness looks. Any other agent has its own skills folder; swap the path. On Windows that is `%USERPROFILE%\.dsh\skills\`, and the last two commands become `Remove-Item -Recurse -Force` and `Copy-Item -Recurse`.
+The paths assume `~/.dsh/skills/`; any other agent has its own skills folder, so swap the path. On Windows that is `%USERPROFILE%\.dsh\skills\`, and the last two commands become `Remove-Item -Recurse -Force` and `Copy-Item -Recurse`.
 
 ## Usage
 
