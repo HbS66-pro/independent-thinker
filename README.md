@@ -4,7 +4,7 @@ Make the agent judge before it acts: what you actually want, whether it's worth 
 
 [中文说明](README.zh-CN.md)
 
-Built for DeepSeek Harness. The files use the standard Agent Skills layout (`SKILL.md` plus `modes/`), so any agent that reads that layout can load them too.
+The files use the standard Agent Skills layout: `SKILL.md` plus `modes/`. Any agent that reads that layout can load them. Nothing here is tied to one vendor.
 
 ## Three modes
 
@@ -46,7 +46,7 @@ cp -r independent-thinker-src/zh ~/.dsh/skills/independent-thinker
 
 Three things in there are load-bearing. The folder name has to match the skill name, so this is not a plain clone into the skills folder. The remove step exists because copying onto a folder that already exists nests the new copy inside the old one, and the old files keep loading. The source clone is disposable; delete `independent-thinker-src` when you are done.
 
-On Windows the skills folder is `%USERPROFILE%\.dsh\skills\`; use `Remove-Item -Recurse -Force` and `Copy-Item -Recurse` for the last two commands.
+The paths assume `~/.dsh/skills/`, which is where DeepSeek Harness looks. Any other agent has its own skills folder; swap the path. On Windows that is `%USERPROFILE%\.dsh\skills\`, and the last two commands become `Remove-Item -Recurse -Force` and `Copy-Item -Recurse`.
 
 ## Usage
 
@@ -88,13 +88,9 @@ Align sits inline in `SKILL.md` because it's the default path and runs every tim
 
 ## Credits
 
-Methods borrowed from a few MIT-licensed projects. No text was copied.
+No text was copied from anywhere. The three-mode structure, the output templates and the tag format are this project's own. What is not: the habit of sorting constraints into hard and soft, tagging claims by evidence level, and writing exit conditions as something checkable. Those show up across public thinking skills — [cc-thinking-skills](https://github.com/tjboudreaux/cc-thinking-skills), [growth](https://github.com/zhu1090093659/growth), [thinking-partner](https://github.com/mattnowdev/thinking-partner) — and are mostly decision practice anyway.
 
-- [cc-thinking-skills](https://github.com/tjboudreaux/cc-thinking-skills): constraint classes, evidence levels
-- [growth](https://github.com/zhu1090093659/growth): exit conditions defined by what the user can say afterwards
-- [thinking-partner](https://github.com/mattnowdev/thinking-partner): splitting a large catalog into `references/`
-
-On the methods themselves: pre-mortem comes from Gary Klein's prospective hindsight. Reversibility and opportunity cost are standard decision theory. First-principles thinking goes back to Aristotle. The XY problem is community shorthand for asking about the wrong thing.
+The names have their own history: pre-mortem is Gary Klein's prospective hindsight, reversibility and opportunity cost are decision theory, first principles goes back to Aristotle, XY problem is community shorthand.
 
 ## License
 

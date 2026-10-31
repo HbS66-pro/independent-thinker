@@ -4,7 +4,7 @@
 
 [English](README.md)
 
-给 DeepSeek Harness 做的。文件是标准 Agent Skills 结构（`SKILL.md` + `modes/`），其他读这个结构的 agent 也能直接装。
+文件是标准 Agent Skills 结构（`SKILL.md` + `modes/`）。凡是读这个结构的 agent 都能装，不绑哪一家。
 
 ## 三个模式
 
@@ -46,7 +46,7 @@ cp -r independent-thinker-src/en ~/.dsh/skills/independent-thinker
 
 三条命令都不能省。目录名要和技能名一致，所以不能直接 clone 进技能目录。先删是因为往已经存在的目录上拷，新的会被套进旧目录里，加载的还是旧文件。源码那份用完可以删掉。
 
-Windows 上技能目录是 `%USERPROFILE%\.dsh\skills\`，后两条换成 `Remove-Item -Recurse -Force` 和 `Copy-Item -Recurse`。
+路径按 `~/.dsh/skills/` 写，那是 DeepSeek Harness 放技能的地方；换别的 agent 就换成它自己的目录。Windows 上是 `%USERPROFILE%\.dsh\skills\`，后两条换成 `Remove-Item -Recurse -Force` 和 `Copy-Item -Recurse`。
 
 ## 用法
 
@@ -88,13 +88,9 @@ zh/    中文版，结构相同
 
 ## 参考与致谢
 
-方法层面受这几个 MIT 项目启发，没有复制任何文本：
+没抄任何文本。三模式结构、输出模板、标签格式是这个项目自己的。借的只有几个习惯：约束分硬软、结论标证据级、退出条件写成能被检验的一句话。这类做法在 [cc-thinking-skills](https://github.com/tjboudreaux/cc-thinking-skills)、[growth](https://github.com/zhu1090093659/growth)、[thinking-partner](https://github.com/mattnowdev/thinking-partner) 这些公开项目里都能看到，说到底也是决策里的常识。
 
-- [cc-thinking-skills](https://github.com/tjboudreaux/cc-thinking-skills)：约束分类、证据分级
-- [growth](https://github.com/zhu1090093659/growth)：退出条件按「用户能说出什么」来定义
-- [thinking-partner](https://github.com/mattnowdev/thinking-partner)：大目录放 `references/` 的分层做法
-
-方法本身的出处：pre-mortem 源自 Gary Klein 的 prospective hindsight；可逆性、机会成本是决策理论常识；第一性原理可追到亚里士多德；XY Problem 是社区俗语。
+几个名词另有出处：pre-mortem 来自 Gary Klein 的 prospective hindsight；可逆性和机会成本是决策理论；第一性原理追到亚里士多德；XY Problem 是社区说法。
 
 ## License
 
