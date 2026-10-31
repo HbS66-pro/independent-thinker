@@ -2,7 +2,9 @@
 
 Make the agent judge before it acts: what you actually want, whether it's worth doing, and what "done" means.
 
-Install it into any tool that supports Agent Skills (Claude Code, Codex, Cursor, Gemini CLI). It doesn't do the work for you. It forces a judgment first, in a shape you can check: do it, don't do it, or do it another way.
+[中文说明](README.zh-CN.md)
+
+Built for DeepSeek Harness. The files use the standard Agent Skills layout (`SKILL.md` plus `modes/`), so any agent that reads that layout can load them too.
 
 ## Three modes
 
@@ -24,13 +26,23 @@ Three rules it doesn't break:
 
 ## Install
 
+Pick one language build. Both declare the same skill name, so install one, not both.
+
+English:
+
 ```bash
-git clone https://github.com/HbS66-pro/independent-thinker.git ~/.claude/skills/independent-thinker
+git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git /tmp/it
+cp -r /tmp/it/en ~/.dsh/skills/independent-thinker
 ```
 
-`SKILL.md` plus `modes/` is the standard layout. Other Agent Skills tools work the same way. No dependencies; it's plain markdown plus a YAML header.
+中文:
 
-The instructions inside are written in Chinese. The mechanics are language-independent; the wording is not.
+```bash
+git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git /tmp/it
+cp -r /tmp/it/zh ~/.dsh/skills/independent-thinker
+```
+
+The folder name has to match the skill name, which is why there is a copy step instead of a plain clone. On Windows the skills folder is `%USERPROFILE%\.dsh\skills\`: copy the `en` or `zh` folder there and name it `independent-thinker`.
 
 ## Usage
 
@@ -64,12 +76,11 @@ Left of the dot is severity (breaks / rework / ugly), right of it is evidence (1
 ## Layout
 
 ```
-SKILL.md                    entry: triage, context, mode table, Align in full, self-checks, budget
-modes/decide.md             decision aid
-modes/first-principles.md   first principles
+en/    English build: SKILL.md, modes/decide.md, modes/first-principles.md
+zh/    Chinese build, same structure
 ```
 
-Align sits inline because it's the default path and runs every time. The other two are cold paths, kept in separate files to keep the entry small.
+Align sits inline in `SKILL.md` because it's the default path and runs every time. The other two are cold paths, kept in separate files to keep the entry small. The two builds are translations of each other, not forks; if you change a rule, change it in both.
 
 ## Credits
 
