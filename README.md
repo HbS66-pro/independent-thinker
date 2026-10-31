@@ -18,6 +18,8 @@ The files use the standard Agent Skills layout: `SKILL.md` plus `modes/`. Any ag
 
 Most of them ship a library. A few dozen mental models, one skill each, and you need to know which one to reach for before any of them helps. This one does three things: judge whether to do it, find what is actually wrong with it, and take it apart down to the assumptions.
 
+The methods are common knowledge. What this adds is an output contract: tag every claim with how it was known, commit to one verdict, stop when the shape is filled. Those are checkable, which is the point.
+
 Three rules it doesn't break:
 
 1. Every judgment lands on do / don't / do it differently. "It depends" isn't an answer.
@@ -85,6 +87,10 @@ zh/    Chinese build, same structure
 ```
 
 Align sits inline in `SKILL.md` because it's the default path and runs every time. The other two are cold paths, kept in separate files to keep the entry small. The two builds are translations of each other, not forks; if you change a rule, change it in both.
+
+## What this is not
+
+Not a smarter model, and not a benchmark. It doesn't make the reasoning deeper; it makes the output checkable. If no tags and no verdict show up in the reply, it did nothing.
 
 ## Credits
 
