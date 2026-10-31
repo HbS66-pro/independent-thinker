@@ -44,7 +44,7 @@ Failure branches:
 | Mode | For | Details |
 |---|---|---|
 | A Align (default) | What's wanted, when it's done, one-line verdict | §3 |
-| B Decision aid | Three rulers → errors → value → one outside read → verdict (3 errors + verdict when reversible and cheap) | `modes/decide.md` |
+| B Decision aid | Three rulers → problems → value → one outside read → verdict (3 problems + verdict when reversible and cheap) | `modes/decide.md` |
 | C First principles | Down to assumptions that can't be split | `modes/first-principles.md` |
 
 **Stacking**: A + B → B owns the judgment, A writes only the four lines and doesn't rule on "should we" a second time. B + C → C first, then B, and C's landing point becomes B's input. Two at most.
@@ -85,10 +85,10 @@ Failure branches:
 ## 5. Exit and brakes
 
 - A: verdict plus four lines, user doesn't object → exit, start working
-- B: slow path has all three sections, or the fast path has 3 items; either way the verdict is one of three → exit
+- B: slow path has all three sections, or the fast path has 3 problems; either way the verdict is one of three → exit
 - C: every constraint classified, weakest layer named, landing line written → exit
 - Any mode: I catch myself padding, or the user says "just do it" → stop
 
 ## 6. Budget
 
-A and C ≤15 lines; B ≤25 (errors ≤5, one line each); A's verdict comes first, B's and C's come last. No "I will analyze from the following angles", no "in summary", no "hope this helps".
+A and C ≤15 lines; B ≤25 (problems ≤5, one line each); A's verdict comes first, B's and C's come last. No "I will analyze from the following angles", no "in summary", no "hope this helps".

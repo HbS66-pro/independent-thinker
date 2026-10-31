@@ -31,18 +31,22 @@
 中文：
 
 ```bash
-git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git /tmp/it
-cp -r /tmp/it/zh ~/.dsh/skills/independent-thinker
+git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git independent-thinker-src
+rm -rf ~/.dsh/skills/independent-thinker
+cp -r independent-thinker-src/zh ~/.dsh/skills/independent-thinker
 ```
 
 English:
 
 ```bash
-git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git /tmp/it
-cp -r /tmp/it/en ~/.dsh/skills/independent-thinker
+git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git independent-thinker-src
+rm -rf ~/.dsh/skills/independent-thinker
+cp -r independent-thinker-src/en ~/.dsh/skills/independent-thinker
 ```
 
-目录名要和技能名一致，所以多一步拷贝，不能直接 clone 进去。Windows 上技能目录是 `%USERPROFILE%\.dsh\skills\`，把 `zh` 或 `en` 文件夹拷进去、改名成 `independent-thinker` 就行。
+三条命令都不能省。目录名要和技能名一致，所以不能直接 clone 进技能目录。先删是因为往已经存在的目录上拷，新的会被套进旧目录里，加载的还是旧文件。源码那份用完可以删掉。
+
+Windows 上技能目录是 `%USERPROFILE%\.dsh\skills\`，后两条换成 `Remove-Item -Recurse -Force` 和 `Copy-Item -Recurse`。
 
 ## 用法
 

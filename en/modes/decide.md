@@ -29,7 +29,7 @@ Evidence, four levels:
 | 3 | reasoned (follows from the premises) |
 | 4 | guessed (say so, don't dress it as fact) |
 
-Five items max. Fewer is fine.
+Five problems max. Fewer is fine.
 
 ## 2. The case for
 
@@ -60,8 +60,8 @@ Look at the floor first: if it fails, what's left (skill, data, relationships, p
 
 ## Exit conditions
 
-- Every item has severity and evidence; if not, rewrite
-- At least one item turns into an action; if none does, the attack was too abstract
+- Every problem has severity and evidence; if not, rewrite
+- At least one problem turns into an action; if none does, the attack was too abstract
 - The verdict is one of the three
 
 ## Failure branches

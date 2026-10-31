@@ -31,18 +31,22 @@ Pick one language build. Both declare the same skill name, so install one, not b
 English:
 
 ```bash
-git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git /tmp/it
-cp -r /tmp/it/en ~/.dsh/skills/independent-thinker
+git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git independent-thinker-src
+rm -rf ~/.dsh/skills/independent-thinker
+cp -r independent-thinker-src/en ~/.dsh/skills/independent-thinker
 ```
 
 中文:
 
 ```bash
-git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git /tmp/it
-cp -r /tmp/it/zh ~/.dsh/skills/independent-thinker
+git clone --depth 1 https://github.com/HbS66-pro/independent-thinker.git independent-thinker-src
+rm -rf ~/.dsh/skills/independent-thinker
+cp -r independent-thinker-src/zh ~/.dsh/skills/independent-thinker
 ```
 
-The folder name has to match the skill name, which is why there is a copy step instead of a plain clone. On Windows the skills folder is `%USERPROFILE%\.dsh\skills\`: copy the `en` or `zh` folder there and name it `independent-thinker`.
+Three things in there are load-bearing. The folder name has to match the skill name, so this is not a plain clone into the skills folder. The remove step exists because copying onto a folder that already exists nests the new copy inside the old one, and the old files keep loading. The source clone is disposable; delete `independent-thinker-src` when you are done.
+
+On Windows the skills folder is `%USERPROFILE%\.dsh\skills\`; use `Remove-Item -Recurse -Force` and `Copy-Item -Recurse` for the last two commands.
 
 ## Usage
 
